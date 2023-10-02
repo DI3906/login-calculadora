@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#080202"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+        android:text="Ingrese su cuenta"
+        android:textAllCaps="true"
+        android:textColor="#FCE9F1"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagenView2"
+        android:layout_width="275dp"
+        android:layout_height="206dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/user" />
+
+    <EditText
+        android:id="@+id/usuario"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_style"
+        android:fontFamily="monospace"
+        android:hint="Usuario"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:textColor="#F1D4E5"
+        android:textColorHighlight="#F1D4E5"
+        android:textColorHint="#B5FCE9F1" />
+
+    <EditText
+        android:id="@+id/contrasenia"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_style"
+        android:fontFamily="monospace"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textColor="#F1D4E5"
+        android:textColorHighlight="#F1D4E5"
+        android:textColorHint="#B5FCE9F1" />
+
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="wrap_content"
+        android:text="Ingresar"
+        android:textColor="#FCE9F1"
+        android:textStyle="bold"
+        android:background="@drawable/btn_calcular"
+        android:onClick="onClick"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        />
+
+</LinearLayout>
