@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.RadioButton;
 import android.widget.Toolbar;
 
+import java.util.List;
+
 public class calculadora extends AppCompatActivity {
 
     EditText num1, num2;
@@ -41,12 +43,14 @@ public class calculadora extends AppCompatActivity {
 
         resultado = (TextView) findViewById(R.id.txtResultado);
 
-//        //recuperacion del nombre del usuario
-//        String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
-//
-//        //muestra un mensaje de bienvenida
-//        TextView textViewUsuario = findViewById(R.id.txtBienvenida);
-//        textViewUsuario.setText("Bienvenido, usuario: " + nombreUsuario);
+        //Accediendo a la matriz
+        List<Usuarios> listaUsuarios = AdminUser.getListaUsuarios();
+
+        //obteniendo el usuario que ingreso
+        String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+        //mostrando el texto de bienvenida y en la siguente linea estableciendo el nombre del usuario que ingreso
+        TextView textViewUsuario = findViewById(R.id.txtBienvenida);
+        textViewUsuario.setText("Bienvenido, " + nombreUsuario);
 
     }
 

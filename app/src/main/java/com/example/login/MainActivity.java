@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     //private static String usuario = "diego";
     //private static String contrasenia = "12345";
 
-    //Lista de usuarios
-    //private List<Usuarios> listaUsuarios = new ArrayList<>();
     // Obtener la lista de usuarios
     List<Usuarios> listaUsuarios = AdminUser.getListaUsuarios();
 
@@ -59,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         //una vez validado se accede a la calcualdora
         if (credencialesCorrectas){
             Intent intent = new Intent(MainActivity.this, calculadora.class);
+            intent.putExtra("nombreUsuario", inputUsuario);
             startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
