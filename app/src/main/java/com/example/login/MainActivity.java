@@ -63,13 +63,6 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("usuarioContrasenia", inputContrasenia);
             startActivity(intent);
 
-            //enviando los datos a la activity de CambiarContrasenia
-//            Intent intent1 = new Intent(MainActivity.this, CambiarContrasenia.class);
-//            Bundle bundle = new Bundle();
-//            bundle.putString("nombreUsuario", inputUsuario);
-//            bundle.putString("usuarioContrasenia", inputContrasenia);
-//            intent1.putExtras(bundle);
-
         } else {
             Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
