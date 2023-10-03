@@ -16,7 +16,13 @@ public class Usuarios {
         return nombreUsuario;
     }
 
+    //obtener contraseña
     public String getContrasenia() {
         return contrasenia;
+    }
+
+    //editar contraseña
+    public void setContrasenia(String contrasenia){
+        this.contrasenia = contrasenia;
     }
 }

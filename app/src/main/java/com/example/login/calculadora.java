@@ -48,6 +48,10 @@ public class calculadora extends AppCompatActivity {
 
         //obteniendo el usuario que ingreso
         String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+
+        //obteniendo la contraseña del usuario que ingreso
+        String usuarioContrasenia = getIntent().getStringExtra("usuarioContrasenia");
+
         //mostrando el texto de bienvenida y en la siguente linea estableciendo el nombre del usuario que ingreso
         TextView textViewUsuario = findViewById(R.id.txtBienvenida);
         textViewUsuario.setText("Bienvenido, " + nombreUsuario);
@@ -70,6 +74,13 @@ public class calculadora extends AppCompatActivity {
                 return true;
             case R.id.iconCambiarContrasenia:
                 Intent intent2 = new Intent(calculadora.this, CambiarContrasenia.class);
+
+                //intentar mandar los usuarios
+                String nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+                String usuarioContrasenia = getIntent().getStringExtra("usuarioContrasenia");
+                intent2.putExtra("nameUser", nombreUsuario);
+                intent2.putExtra("password", usuarioContrasenia);
+
                 startActivity(intent2);
                 return true;
                 //Intent intent = new Intent(MainActivity.this, calculadora.class);

@@ -10,13 +10,28 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txtSaludo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+        android:text="Hola, "
+        android:textColor="#FCE9F1"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:fontFamily="serif-monospace"
         android:gravity="center_horizontal"
-        android:text="Cambiar contraseña"
-        android:textAllCaps="true"
+        android:text="Desea cambiar contraseña"
         android:textColor="#FCE9F1"
         android:textSize="25sp"
         android:textStyle="bold"
