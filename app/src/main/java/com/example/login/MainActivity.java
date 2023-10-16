@@ -4,24 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-//importar arrayList y List de J A V A
-import java.io.Serializable;
-import java.util.ArrayList;
 import  java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText user, password;
     private Button btnIngresar;
-    // Usuario y contraseña
-    //private static String usuario = "diego";
-    //private static String contrasenia = "12345";
 
     // Obtener la lista de usuarios
     List<Usuarios> listaUsuarios = AdminUser.getListaUsuarios();
@@ -67,16 +59,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
 
-
-        /*
-
-        if (inputUsuario.equals(usuario) && inputContrasenia.equals(contrasenia)) {
-            Intent intent = new Intent(MainActivity.this, calculadora.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-        }
-
-        */
     }
 }

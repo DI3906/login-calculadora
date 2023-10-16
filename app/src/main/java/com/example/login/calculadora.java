@@ -31,7 +31,6 @@ public class calculadora extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora);
 
-
         /*Vincular los controles para manipular la aplicacion*/
         num1 = (EditText) findViewById(R.id.txtNum1);
         num2 = (EditText) findViewById(R.id.txtNum2);

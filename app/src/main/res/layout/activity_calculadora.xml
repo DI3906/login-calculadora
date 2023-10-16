@@ -7,18 +7,6 @@
     android:orientation="vertical"
     android:background="#080202"
     tools:context=".calculadora">
-
-    <!--<androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolBar"
-        android:background="@color/colorBarra"
-        app:title="Calculadora"
-        app:titleMarginStart="25dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        android:layout_constraintTop_toTopOf="parent"
-        />-->
     
     <TextView
         android:id="@+id/txtBienvenida"

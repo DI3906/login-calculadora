@@ -49,39 +49,33 @@ public class CambiarContrasenia extends AppCompatActivity {
         String inputContraseniaAntigua = contraseniaAntigua.getText().toString().trim();
         String inputContraseniaNueva = contraseniaNueva.getText().toString().trim();
 
-        //verifica
+        // Inicia la bandera en falso, indicando que las credenciales son incorrectas
         boolean credencialesCorrectas = false;
 
-        //inicia el valor en -1, es decir, que no se encuentrar
-        int usuarioIndice = -1;
-
-        //recorre la matriz
-        for (int i = 0; i < listaUsuarios.size(); i++ ){
-
+        // Recorre la matriz
+        for (int i = 0; i < listaUsuarios.size(); i++) {
             Usuarios usuarios = listaUsuarios.get(i);
 
-            if (usuarios.getNombreUsuario().equals(nameUsuario) && usuarios.getContrasenia().equals(userPassword)){
+            if (usuarios.getNombreUsuario().equals(nameUsuario) && usuarios.getContrasenia().equals(inputContraseniaAntigua)) {
+                // Las credenciales son correctas
                 credencialesCorrectas = true;
-                usuarioIndice = i;
-                break;
+
+                // Cambia la contraseña
+                usuarios.setContrasenia(inputContraseniaNueva);
+
+                // Muestra un mensaje de éxito
+                Toast.makeText(getApplicationContext(), "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show();
+
+                // Regresa al login
+                Intent intent = new Intent(CambiarContrasenia.this, MainActivity.class);
+                startActivity(intent);
+                break; // Sal del bucle una vez que se encontraron las credenciales correctas
             }
         }
 
-        //una vez validado, cambia la contraseña y se regresa al login
-        if (credencialesCorrectas && usuarioIndice != -1){
-            //cambia la contraseña
-            Usuarios contraseniaCambiada = listaUsuarios.get(usuarioIndice);
-            contraseniaCambiada.setContrasenia(inputContraseniaNueva);
-
-            //muestra un mensaje de exito
-            Toast.makeText(getApplicationContext(), "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show();
-
-            //regresandolo al login
-            Intent intent = new Intent(CambiarContrasenia.this, MainActivity.class);
-            startActivity(intent);
-
-        } else {
-            Toast.makeText(getApplicationContext(), "La contraseña no coincide, revisa nuevamente", Toast.LENGTH_SHORT).show();
+        // Si las credenciales no son correctas, muestra un mensaje de error
+        if (!credencialesCorrectas) {
+            Toast.makeText(getApplicationContext(), "La contraseña antigua es incorrecta, revisa nuevamente", Toast.LENGTH_SHORT).show();
         }
     }
 }
